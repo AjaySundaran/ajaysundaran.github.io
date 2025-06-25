@@ -5,16 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
     typeSpeed: 100,
     backSpeed: 100,
     loop: true,
-    showCursor: false
+    showCursor: false,
   });
 
   const synth = window.speechSynthesis;
-  const cursorText = document.querySelector('.cursorText');
+  const cursorText = document.querySelector(".cursorText");
   const contactForm = document.querySelector("#page9 form");
   let hasSpoken = false;
 
   // 2. Smooth Scrolling for Anchors
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
@@ -24,96 +24,90 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 3. Floating Text Visibility on Enter/Leave
-  window.addEventListener('mouseenter', () => {
+  // 3. Floating Cursor Text Follow + Show/Hide
+  document.addEventListener("mousemove", (e) => {
     if (!hasSpoken && cursorText) {
-      cursorText.style.opacity = '1';
-    }
-  });
-  window.addEventListener('mouseleave', () => {
-    if (!hasSpoken && cursorText) {
-      cursorText.style.opacity = '0';
+      cursorText.style.left = `${e.clientX + 8}px`;
+      cursorText.style.top = `${e.clientY + 8}px`;
+      cursorText.style.opacity = "1";
     }
   });
 
-  // 4. Floating Text Follow Cursor
-  document.addEventListener('mousemove', (e) => {
-    if (!hasSpoken && cursorText) {
-      cursorText.style.left = `${e.clientX + 2}px`;
-      cursorText.style.top = `${e.clientY + 2}px`;
-    }
+  window.addEventListener("mouseleave", () => {
+    if (!hasSpoken && cursorText) cursorText.style.opacity = "0";
   });
 
-  // 5. Hide floating cursor hint by default
-  document.body.classList.add('cursor-hidden');
-
-  // 6. Load voices safely
+  // 4. Load voices safely (wait if needed)
   function waitForVoices() {
     return new Promise((resolve) => {
       let voices = synth.getVoices();
-      if (!voices.length) {
-    console.log("Voices not loaded yet. Waiting...");
-    speechSynthesis.onvoiceschanged = () => speakIntro();
-    return;
-  }
       if (voices.length) return resolve(voices);
-      synth.onvoiceschanged = () => resolve(synth.getVoices());
+
+      synth.onvoiceschanged = () => {
+        voices = synth.getVoices();
+        if (voices.length) resolve(voices);
+      };
     });
   }
 
-  // 7. Speak Introduction
+  // 5. Speak Mass Intro
   function speakIntro(voices) {
     const hour = new Date().getHours();
-    const greeting = hour < 12 ? "Good morning." : hour < 18 ? "Good afternoon." : "Good evening.";
+    const greeting =
+      hour < 12 ? "Good morning." : hour < 18 ? "Good afternoon." : "Good evening.";
 
-    const message = `${greeting} You are about to enter the world of Aajay Sundaran. ` +
+    const message =
+      `${greeting} You are about to enter the world of Aajay Sundaran. ` +
       `An aerospace innovator with a mission to redefine the skies. ` +
       `A master of V-TOL aircraft, intelligent U-A-V systems, and advanced flight engineering. ` +
-      `Also an AI developer and programmer, blending code with control to build the future of flight.`+
+      `Also an A I developer and programmer, blending code with control to build the future of flight. ` +
       `Where precision meets passion, and innovation takes flight. ` +
       `Welcome to the future of aerospace — welcome to his legacy.`;
 
     const utterance = new SpeechSynthesisUtterance(message);
-    const preferred = voices.find(v => v.name === "Google UK English Female" && v.lang === "en-GB");
-    const fallback = voices.find(v => v.lang.startsWith("en")) || voices[0];
+    const preferred = voices.find(
+      (v) => v.name === "Google UK English Female" && v.lang === "en-GB"
+    );
+    const fallback = voices.find((v) => v.lang.startsWith("en")) || voices[0];
 
     utterance.voice = preferred || fallback;
-    utterance.rate = 0.9;
+    utterance.rate = 0.85; // Slower for cinematic feel
     utterance.pitch = 1;
+    utterance.volume = 1;
 
     synth.cancel();
     synth.speak(utterance);
   }
 
-  // 8. Trigger speech on click
+  // 6. Trigger on first click
   waitForVoices().then((voices) => {
-    document.addEventListener('click', () => {
-      if (hasSpoken) return;
-      hasSpoken = true;
-      if (cursorText) cursorText.style.display = 'none';
-      document.body.classList.remove('cursor-hidden');
-      speakIntro(voices);
-    }, { once: true });
+    document.addEventListener(
+      "click",
+      () => {
+        if (hasSpoken) return;
+        hasSpoken = true;
+        if (cursorText) cursorText.style.display = "none";
+        speakIntro(voices);
+      },
+      { once: true }
+    );
   });
 
-  // 9. Reset contact form
+  // 7. Reset contact form on load
   if (contactForm) {
     contactForm.reset();
   }
 
-  // 10. Scroll to top on load
+  // 8. Scroll to top on load
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-
-  // 11. Set arrow cursor (default)
-  document.body.style.cursor = "default";
 });
 
-// 12. Prevent scroll restoration on reload
+// 9. Prevent scroll restoration
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-// 13. Mobile Sidebar Toggle
+// 10. Sidebar Mobile Toggle
 function toggleSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.toggle("mobile-visible");
