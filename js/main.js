@@ -51,6 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function waitForVoices() {
     return new Promise((resolve) => {
       let voices = synth.getVoices();
+      if (!voices.length) {
+    console.log("Voices not loaded yet. Waiting...");
+    speechSynthesis.onvoiceschanged = () => speakIntro();
+    return;
+  }
       if (voices.length) return resolve(voices);
       synth.onvoiceschanged = () => resolve(synth.getVoices());
     });
