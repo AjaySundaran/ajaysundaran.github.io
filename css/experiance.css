@@ -1,0 +1,118 @@
+.page.experience {
+  padding: 4rem 2rem;
+  background: transparent;
+  color: white;
+}
+
+.experiance-outline-text {
+  text-align: center;
+  font-size: 2.5rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #00bfff;
+  margin-bottom: 3rem;
+  margin-top: -300px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experience-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.experience-card {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00bfff;
+  width: 100%;
+  max-width: 500px;
+  flex: 1 1 45%;
+  min-height: 110px;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #00bfff;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px #00bfff;
+}
+
+.exp-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #00bfff;
+  margin-right: 1rem;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.exp-text {
+  flex: 2;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bfff;
+  margin: 0;
+  text-align: center;
+}
+
+.exp-role {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #cdcdcd;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.exp-info {
+  text-align: right;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+.exp-duration {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #00bfff;
+}
+
+.exp-location {
+  font-size: 0.9rem;
+  color: #cdcdcd;
+}
+
+.experience-card {
+  position: relative;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #1a1a1a; /* optional */
+  color: #fff;
+}
+
+.view-certificate-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #00bfff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.view-certificate-link:hover {
+  background-color: #009acd;
+}

@@ -1,0 +1,56 @@
+@media (max-width: 768px) {
+  #page4 {
+  margin-top: 10rem; /* or use padding-top */
+}
+  .project-outline-text {
+    font-size: 2rem;
+    margin-top: -50px;
+    margin-bottom: -30px;
+    -webkit-text-stroke: 1px #00bfff;
+  }
+
+  .project-image-circle {
+    top: -80px;
+    left: calc(40% - 110px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.project-title-box1,
+.project-title-box2,
+.project-title-box3 {
+    opacity: 1;
+    background-color: #000;
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    top: -65px;
+    z-index: 1;
+    box-shadow: 0 0 15px #00bfff;
+    border: 3px solid #00bfff;
+    text-align: right;
+    justify-content: flex-end;
+    line-height: 60px;
+  
+    padding: 0px 5px 30px 50px;
+    color: transparent;
+    -webkit-text-stroke: 1px #00bfff;
+    font-size: 20px;
+    text-align: center;
+    
+    
+    
+}
+.card:hover .project-image-circle {
+
+    width: 80px;
+    height: 80px;
+
+}
+
+
+
+}

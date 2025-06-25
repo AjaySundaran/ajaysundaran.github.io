@@ -1,0 +1,96 @@
+
+.education-outline-text {
+    font-size: 2.5rem;
+    color: transparent;
+    -webkit-text-stroke: 2px #00bfff;
+    margin-bottom: 1rem;
+    margin-top: -10px;
+    
+
+  }
+
+.edu-roadmap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 2rem 1rem;
+  }
+  
+  .edu-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .edu-circle {
+    width: 100px;
+    height: 40px;
+    border-radius: 20%;
+    background-color: #00bfff;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #00bfff;
+  }
+  
+  .edu-box {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00bfff;
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 10px #00bfff inset;
+    min-width: 200px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .edu-box h3 {
+    color: #00bfff;
+    margin: 0 0 0.5rem;
+    font-size: 18px;
+  }
+
+  .edu-box p {
+    font-size: 14px;
+  }
+  
+  .edu-line {
+    height: 4px;
+    width: 60px;
+    background-color: #00bfff;
+  }
+  
+  /* Optional: Scrollbar Styling for better UX */
+  .edu-roadmap::-webkit-scrollbar {
+    height: 6px;
+  }
+  .edu-roadmap::-webkit-scrollbar-thumb {
+    background: #00bfff;
+    border-radius: 10px;
+  }
+
+  .edu-img {
+    width: 350px;
+    height: 250px;
+    margin-top: 1rem;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.6);
+    border: 2px solid #00bfff;
+    transition: transform 0.3s ease;
+  }
+  
+  .edu-img:hover {
+    transform: scale(1.05);
+  }
+

@@ -1,0 +1,57 @@
+@media (max-width: 768px) {
+  #page8 {
+  margin-top: 20rem; /* or use padding-top */
+}
+
+  .achievement-section-title {
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #00bfff;
+    margin-bottom: 2rem;
+    text-align: center;
+
+  }
+
+  .page.achivement {
+    padding: 15rem 1rem;
+  }
+
+  .achivement-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .achivement-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .ach-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 1rem 0;
+  }
+
+  .ach-text {
+    align-items: center;
+  }
+
+  .ach-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .ach-provider {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ach-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+}

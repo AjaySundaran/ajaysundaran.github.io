@@ -1,0 +1,125 @@
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* Adjust this if you have a fixed header/sidebar */
+}
+
+ .page {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  min-height: 100vh; /* ✔ Ensures each page fills at least 1 screen */
+  height: auto;      /* ✔ Allows the section to expand if content is taller */
+  overflow: visible; /* ✔ Prevents content from being clipped */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.page + .page {
+  margin-top: 1.5rem;
+}
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 50px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 3rem;
+    flex-direction: column;
+    display: flex;
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    margin-top: 1rem;
+  }
+
+  .sidebar.mobile-visible {
+    transform: translateX(0);
+  }
+
+  .sidebar span {
+    display: none !important;
+  }
+
+  .mobile-menu-icon {
+    opacity:1;
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 2100;
+    font-size: 2rem;
+    color: #00bfff;
+    cursor: pointer;
+  }
+
+  .page-container {
+    margin-left: 0 !important;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    
+  }
+
+  .text-section {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .name-outline-text{
+    font-size: 2rem;
+    -webkit-text-stroke: 0.5px #ffffff;
+    text-align: center;
+    margin: 0;
+  }
+
+  .outline-text,
+  .typing-text {
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+    -webkit-text-stroke: 1px #00bfff;
+  }
+
+  .image-section .profile-photo {
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .action-buttons {
+    position: static;
+    margin: 20px auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .action-btn {
+    width: 100px;
+    height: auto;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}

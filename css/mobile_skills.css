@@ -1,0 +1,61 @@
+@media (max-width: 768px) {
+  #page3 {
+  margin-top: 10rem; /* or use padding-top */
+}
+
+  .skill {
+  padding-top: 0rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+  
+  .skill-outline-text {
+    font-size: 2rem;
+    margin-top: -10;
+    text-align: center;
+    -webkit-text-stroke: 1px #00bfff;
+  }
+
+  .skills_container {
+    padding: 1rem;
+    gap: 1.2rem;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .skills_category {
+    min-width: 90%;
+    max-width: 100%;
+    padding: 1rem;
+    box-shadow: 0 0 8px #00bfff;
+    max-height: 200px;
+  }
+
+  .skills_heading {
+    font-size: 1.2rem;
+    padding-left: 8px;
+    margin-bottom: 0.8rem;
+  }
+
+  .skills_wrapper {
+    gap: 0.4rem;
+  }
+
+  .skills_title h3 {
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .progress_container {
+    height: 4px;
+  }
+
+  .progress_bar {
+    height: 4px;
+  }
+
+  .progress_bar .percent {
+    font-size: 0.75rem;
+    top: -20px;
+  }
+}

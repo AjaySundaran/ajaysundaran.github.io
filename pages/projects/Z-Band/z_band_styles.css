@@ -1,0 +1,107 @@
+/* Background & Base Layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: url('./airplane-bunker.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.z_band-page {
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.z_band-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #00bfff;
+  margin-bottom: 2rem;
+}
+
+/* Layout Flexbox */
+.z_band-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+/* Video Block */
+.z_band-video-wrapper {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 340px;
+  max-height: 300px;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00bfff;
+  background-color: black;
+}
+
+.z_band-video-wrapper-small {
+  flex: 1 1 45%;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 300px;
+  max-height: 300px;
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00bfff;
+  background-color: black;
+}
+
+.z_band-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Summary Content */
+.z_band-details {
+  flex: 1 1 45%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px #00bfff;
+  overflow-y: auto;
+}
+
+.z_band-details h3 {
+  color: #00bfff;
+  margin-top: 0;
+}
+
+.z_band-details p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .z_band-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .z_band-video-wrapper,
+  .z_band-details {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,81 @@
+
+.achievement-section-title {
+text-align: center;
+font-size: 2.5rem;
+color: transparent;
+-webkit-text-stroke: 2px #00bfff;
+margin-bottom: 3rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-top: -200px;
+}
+
+.page.achivement {
+padding: 4rem 2rem;
+background: transparent;
+}
+
+.achivement-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 2rem;
+justify-content: center;
+}
+
+.achivement-card {
+display: flex;
+align-items: flex-start;
+background-color: rgba(0, 0, 0, 0.6);
+padding: 1.5rem;
+border-radius: 12px;
+box-shadow: 0 0 15px #00bfff;
+max-width: 850px;
+width: 100%;
+border: 1px solid #00bfff;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+color: white;
+}
+
+.achivement-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 0 20px #00bfff;
+}
+
+.ach-logo {
+width: 70px;
+height: 70px;
+border-radius: 8px;
+margin-right: 1.2rem;
+object-fit: cover;
+border: 2px solid #00bfff;
+box-shadow: 0 0 10px #00bfff;
+}
+
+.ach-text {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+.ach-title {
+font-size: 1.4rem;
+font-weight: bold;
+color: #00bfff;
+margin-bottom: 0.4rem;
+font-family: 'Inter', sans-serif;
+}
+
+.ach-provider {
+font-size: 0.95rem;
+color: #cdcdcd;
+margin-bottom: 0.8rem;
+font-family: 'Inter', sans-serif;
+}
+
+.ach-desc {
+font-size: 1rem;
+color: #eee;
+line-height: 1.6;
+font-family: 'Inter', sans-serif;
+}
+
